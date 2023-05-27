@@ -9,8 +9,8 @@ import {
   RegisterUseCaseInput,
 } from '@/domain/usecases/user/register.usecase';
 import { MockProxy, mock } from 'jest-mock-extended';
-import { makeUser } from '../../../../test/factories/user.factory';
-import { UserMemoryRepository } from '../../../../test/repositories/user.memory.repository';
+import { makeUser } from '../../../test/factories/user.factory';
+import { UserMemoryRepository } from '../../../test/repositories/user.memory.repository';
 
 describe('RegisterUsecase', () => {
   let usecase: RegisterUsecase;

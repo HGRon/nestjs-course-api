@@ -1,4 +1,4 @@
-import { TestDateUtils } from 'test/utils/test_date_utils';
+import { TestDateUtils } from '../../../test/utils/test_date_utils';
 import { UserEntity } from './user.entity';
 import { UserEmail } from './value-objects/email/user_email';
 import { UserName } from './value-objects/name/user_name';

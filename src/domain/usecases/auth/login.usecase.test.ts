@@ -5,7 +5,7 @@ import {
 } from '@/domain/usecases/auth/login.usecase';
 import { JwtService } from '@nestjs/jwt';
 import { MockProxy, mock } from 'jest-mock-extended';
-import { makeUser } from '../../../../test/factories/user.factory';
+import { makeUser } from '../../../test/factories/user.factory';
 
 describe('LoginUsecase', () => {
   let jwtService: MockProxy<JwtService>;

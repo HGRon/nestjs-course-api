@@ -1,0 +1,49 @@
+service: serverless-example
+
+plugins:
+  - serverless-bundle
+
+custom:
+  bundle:
+    sourcemaps: false                # Enable source maps
+    caching: true                   # Enable Webpack caching
+    concurrency: 5                  # Set desired concurrency, defaults to the number of available cores
+    stats: false                    # Don't print out any Webpack output
+    linting: false                 # Enable linting as a part of the build process
+    generateStatsFiles: false       # Creates stats files that could be used for bundle analyzing, more below
+    esbuild: false                  # Use esbuild-loader instead of babel or ts for faster builds
+    disableForkTsChecker: false     # Disable the ForkTsChecker plugin, more below
+    tsConfig: "tsconfig.json"       # Path to your 'tsconfig.json', if it's not in the root
+    forceExclude: # Don't include these in the package
+      - aws-sdk             # Because it'll be provided through a Lambda Layer
+    externals:
+      - "swagger-ui-dist"
+    minifyOptions:
+      keepNames: true
+    ignorePackages:
+      - "@nestjs/websockets/socket-module"
+      - "@nestjs/microservices/microservices-module"
+      - "@nestjs/microservices"
+      - "cache-manager"
+      #- "class-validator"
+      - "class-transformer/storage"
+    excludeFiles:
+      - "**/*.test.ts"    # Exclude files from Webpack that match the glob
+      - "**/*.e2e-spec.ts"    # Exclude files from Webpack that match the glob
+      - "**/*.spec.ts"    # Exclude files from Webpack that match the glob
+    packager: npm                   # Specify a packager, 'npm' or 'yarn'. Defaults to 'npm'.
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  main:
+    handler: src/index.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'

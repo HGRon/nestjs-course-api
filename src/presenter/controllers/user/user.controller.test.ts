@@ -4,7 +4,7 @@ import { UserController } from '@/presenter/controllers/user/user.controller';
 import { UserDtoMapper } from '@/presenter/models/dto/user/user.dto.mapper';
 import { CreateUserPayload } from '@/presenter/models/payloads/user/create-user.payload';
 import { mock, MockProxy } from 'jest-mock-extended';
-import { makeUser } from '../../../../test/factories/user.factory';
+import { makeUser } from '../../../test/factories/user.factory';
 
 describe('UserController', () => {
   let controller: UserController;
