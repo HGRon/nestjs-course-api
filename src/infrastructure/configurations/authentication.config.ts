@@ -11,9 +11,9 @@ export interface AuthConfig {
 
 export default registerAs<AuthConfig>(ENV_AUTH_CONFIG_KEY, () => {
   return {
-    secret: process.env.JWT_KEY,
+    secret: process.env.JWT_KEY || 'SECRET',
     signOptions: {
-      expiresIn: process.env.JWT_EXPIRES_IN,
+      expiresIn: process.env.JWT_EXPIRES_IN || '7d',
     },
   };
 });

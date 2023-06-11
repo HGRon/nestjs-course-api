@@ -16,12 +16,24 @@ const config: Config = {
     },
   },
   moduleNameMapper: {
-    '@/presenter/(.*)': ['<rootDir>/src/presenter/$1'],
-    '@/infra/(.*)': ['<rootDir>/src/infrastructure/$1'],
-    '@/domain/(.*)': ['<rootDir>/src/domain/$1'],
-    '@/helpers/(.*)': ['<rootDir>/src/helpers/$1'],
+    '@/presenter/(.*)': ['<rootDir>/presenter/$1'],
+    '@/infra/(.*)': ['<rootDir>/infrastructure/$1'],
+    '@/domain/(.*)': ['<rootDir>/domain/$1'],
+    '@/helpers/(.*)': ['<rootDir>/helpers/$1'],
     'test/(.*)': ['<rootDir>/test/$1'],
   },
+  reporters: [
+    'default',
+    [
+      'jest-html-reporter',
+      {
+        pageTitle: 'Relatório de Testes',
+        outputPath: './reports/html/test-report.html',
+        includeFailureMsg: true,
+        includeConsoleLog: true,
+      },
+    ],
+  ],
 };
 
 export default config;

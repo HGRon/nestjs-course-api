@@ -15,7 +15,7 @@ describe('CourseEntity', () => {
 
   it('should set and get the title correctly', () => {
     const title = new CourseTitle('Sample Title');
-    courseEntity.title = title;
+    courseEntity = new CourseEntity({ title });
     expect(courseEntity.title).toEqual(title);
   });
 });
