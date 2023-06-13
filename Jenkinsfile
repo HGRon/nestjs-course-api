@@ -2,10 +2,14 @@ pipeline {
   agent any
   
   stages {
-    stage('Build') {
+    stage('Install') {
       steps {
         git 'https://github.com/HGRon/api-integration.git'
         bat 'npm install'
+      }
+    }
+    stage('Build') {
+      steps {
         bat 'npm run build'
         bat 'npm run test:cov'
         //bat 'docker system prune -a --volumes -f'
@@ -19,8 +23,8 @@ pipeline {
         }
 
         echo "Iniciando deploy"
-        bat 'npm run deploy:aws'
-        //bat 'docker run -d integration/integration-prod'
+        //bat 'npm run deploy:aws'
+        bat 'docker run -d integration/integration-prod'
       }
     }
   }
