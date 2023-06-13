@@ -13,7 +13,7 @@ import { JwtService } from '@/domain/contracts/services/jwt_service';
 import { BcryptPasswordEncryptionService } from '@/infra/services/bcrypt_password_encryptation_service';
 import { ConfigService } from '@nestjs/config';
 import { ENV_AUTH_CONFIG_KEY } from '@/infra/configurations/authentication.config';
-import { UserMemoryRepository } from '../../../test/repositories/user.memory.repository';
+import { UserMemoryRepository } from '../../test/repositories/user.memory.repository';
 
 @Module({
   imports: [

@@ -1,6 +1,4 @@
 import { UserCourseEntity } from './user-course.entity';
-import { CourseEntity } from '@/domain/entities/course/course.entity';
-import { UserEntity } from '@/domain/entities/user/user.entity';
 
 describe('UserCourseEntity', () => {
   let userCourseEntity: UserCourseEntity;

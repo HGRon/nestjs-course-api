@@ -2,7 +2,7 @@ import {
   CreateCourseUsecase,
   CreateCourseUseCaseInput,
 } from '@/domain/usecases/course/create.usecase';
-import { CourseMemoryRepository } from '../../../../test/repositories/course.memory.repository';
+import { CourseMemoryRepository } from '../../../test/repositories/course.memory.repository';
 
 describe('RegisterUsecase', () => {
   let usecase: CreateCourseUsecase;

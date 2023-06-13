@@ -5,7 +5,7 @@ import { GetOneUsecase } from '@/domain/usecases/course/get-one.usecase';
 import { CourseController } from '@/presenter/controllers/course/course.controller';
 import { Module } from '@nestjs/common';
 import { AuthModule } from '@/presenter/modules/auth.module';
-import { CourseMemoryRepository } from '../../../test/repositories/course.memory.repository';
+import { CourseMemoryRepository } from '../../test/repositories/course.memory.repository';
 
 @Module({
   imports: [AuthModule],

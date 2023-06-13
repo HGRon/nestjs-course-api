@@ -5,7 +5,7 @@ import { BcryptPasswordEncryptionService } from '@/infra/services/bcrypt_passwor
 import { UserController } from '@/presenter/controllers/user/user.controller';
 import { Module } from '@nestjs/common';
 import { AuthModule } from '@/presenter/modules/auth.module';
-import { UserMemoryRepository } from '../../../test/repositories/user.memory.repository';
+import { UserMemoryRepository } from '../../test/repositories/user.memory.repository';
 
 @Module({
   imports: [AuthModule],

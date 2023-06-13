@@ -3,8 +3,8 @@ import { UserEmail } from '@/domain/entities/user/value-objects/email/user_email
 import { UserPassword } from '@/domain/entities/user/value-objects/password/user_password';
 import { ValidateToLoginUsecase } from '@/domain/usecases/auth/validate-to-login.usecase';
 import { MockProxy, mock } from 'jest-mock-extended';
-import { makeUser } from '../../../../test/factories/user.factory';
-import { UserMemoryRepository } from '../../../../test/repositories/user.memory.repository';
+import { makeUser } from '../../../test/factories/user.factory';
+import { UserMemoryRepository } from '../../../test/repositories/user.memory.repository';
 
 describe('ValidateToLoginUsecase', () => {
   let repository: UserMemoryRepository;

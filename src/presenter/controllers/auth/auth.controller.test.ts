@@ -4,7 +4,7 @@ import {
 } from '@/domain/usecases/auth/login.usecase';
 import { AuthController } from '@/presenter/controllers/auth/auth.controller';
 import { MockProxy, mock } from 'jest-mock-extended';
-import { makeUser } from '../../../../test/factories/user.factory';
+import { makeUser } from '../../../test/factories/user.factory';
 
 describe('AuthController', () => {
   let controller: AuthController;

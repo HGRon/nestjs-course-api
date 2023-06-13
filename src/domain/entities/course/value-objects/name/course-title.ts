@@ -26,7 +26,6 @@ export class CourseTitle {
   get value(): string {
     return this.title;
   }
-
   private validate(value: string): boolean {
     return value.trim().length >= 3 && value.trim().length < 1024;
   }

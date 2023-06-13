@@ -26,8 +26,6 @@ export class UserMemoryRepository implements UserRepository {
 
     const user = this.users.find((u: any) => u.email.value === email);
 
-    console.log(this.users);
-
     if (!user) return null;
 
     return user;
